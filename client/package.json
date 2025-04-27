@@ -5,14 +5,14 @@
   "type": "module",
   "homepage": "https://pablodev.github.io/pd-renders/",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "clean": "rm -rf client/dist",
-    "predeploy": "npm run clean && npm run build",
-    "deploy": "cd client && npm run deploy"
-  },
+  "dev": "cd client && npm run dev",
+  "build": "cd client && npm run build",
+  "lint": "cd client && npm run lint",
+  "preview": "cd client && npm run preview",
+  "clean": "rm -rf client/dist",
+  "predeploy": "npm run clean && npm run build",
+  "deploy": "gh-pages --dist client/dist --branch gh-pages --clean"
+},
   "dependencies": {
     "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.2.0",
