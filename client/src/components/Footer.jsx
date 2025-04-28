@@ -7,7 +7,7 @@ const Footer = ({ language }) => {
     <footer className="flex flex-col w-full text-white items-center justify-center text-center py-12">
       <div className="flex max-md:flex-col justify-evenly w-full">
         <div className="flex justify-center p-6">
-          <img className="md:w-[150px] w-[100px]" src={logo} alt="" />
+          <img className="md:w-[150px] w-[100px]" src={logo} alt="Logo PD Reander" onClick={() => window.location.href="#header"}/>
         </div>
         <div className="flex flex-col justify-center p-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -44,4 +44,27 @@ input:-webkit-autofill {
   transition: opacity 1.5s ease-in-out;
 }
 
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.hover\:pause-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pause-scroll {
+  0% {
+    animation-play-state: paused;
+  }
+}
+
 

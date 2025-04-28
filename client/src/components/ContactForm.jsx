@@ -26,6 +26,17 @@ const ContactForm = ({ language }) => {
       )
       .then(
         (result) => {
+          if (result.status === 200) {
+            alert("Message sent successfully!");
+            setFormData({
+              name: "",
+              email: "",
+              subject: "",
+              description: "",
+            });
+          } else {
+            alert("Failed to send message. Please try again.");
+          }
           console.log(result.text);
         },
         (error) => {
@@ -52,7 +63,7 @@ const ContactForm = ({ language }) => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg border-bottom focus:ring-gray-400 border-b-1 border-gray-400 auto-complete:bg-white"
+          className="w-full px-4 py-2 border-bottom focus:ring-gray-400 border-b-1 border-gray-400 auto-complete:bg-white"
           placeholder={language === "en" ? "Your Name" : "Tu Nombre"}
           required
         />
@@ -66,7 +77,7 @@ const ContactForm = ({ language }) => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-2 border-b-1 rounded-lg border-gray-400"
+          className="w-full px-4 py-2 border-b-1 border-gray-400"
           placeholder={language === "en" ? "Your Email" : "Tu Correo"}
           required
         />
@@ -80,7 +91,7 @@ const ContactForm = ({ language }) => {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="w-full px-4 py-2 border-b-1 rounded-lg border-gray-400"
+          className="w-full px-4 py-2 border-b-1 border-gray-400"
           placeholder={language === "en" ? "Subject" : "Asunto"}
           required
         />
@@ -93,7 +104,7 @@ const ContactForm = ({ language }) => {
           name="description"
           value={formData.description}
           onChange={handleChange}
-          className="w-full px-4 py-2 border-b-1 rounded-lg border-gray-400"
+          className="w-full px-4 py-2 border-b-1 border-gray-400"
           placeholder={language === "en" ? "Your Message" : "Tu Mensaje"}
           rows="4"
           required
@@ -101,7 +112,7 @@ const ContactForm = ({ language }) => {
 
         <button
           type="submit"
-          className="w-full py-3 rounded-lg hover:bg-gray-600 border-1 border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition"
+          className="w-full py-3 hover:bg-gray-600 border-1 border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition"
         >
           {language === "en" ? "Send Message" : "Enviar Mensaje"}
         </button>

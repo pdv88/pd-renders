@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
-/* import Services from './components/Services'; */
-import ContactForm from './components/ContactForm.jsx';
-import Gallery from './components/Gallery.jsx';
-import Footer from './components/Footer.jsx';
 import Hero from './components/Hero.jsx';
+import Gallery from './components/Gallery.jsx';
+/* import Services from './components/Services'; */
+/* import Testimonials from './components/Testimonials.jsx'; */
+import ContactForm from './components/ContactForm.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   const [language, setLanguage] = useState('es');
@@ -45,6 +46,9 @@ function App() {
         </div>
         {/* <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
           <Services language={language} />
+        </div> */}
+        {/* <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
+          <Testimonials language={language} />
         </div> */}
         <div ref={(el) => (sectionsRef.current[3] = el)} className="opacity-0 transition-opacity duration-700">
           <ContactForm language={language} />
