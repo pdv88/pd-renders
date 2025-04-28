@@ -14,10 +14,10 @@ const Hero = ({ language }) => {
           </>
         )}
       </h1>
-      <h3 className="w-full max-md:text-left text-center text-lg sm:text-xl md:text-2xl mt-4 text-gray-500">
+      <h3 className="w-full max-md:text-left text-center text-lg sm:text-xl md:text-2xl mt-4 opacity-30">
         {language === "en"
-          ? "Renders | Virtual Tours"
-          : "Renders | Recorridos Virtuales"}
+          ? "Still Renders | 360 Renders | Animations"
+          : "Renders Estáticos | Renders 360 | Animaciones"}
       </h3>
       <button
         onClick={() => window.location.href = "#contact"}
