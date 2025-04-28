@@ -20,8 +20,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Ubuntu Sans Mono", monospace;
-  font-optical-sizing: auto;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .group:hover .absolute {
@@ -32,6 +33,15 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #232323 inset;
   box-shadow: 0 0 0px 1000px #232323 inset;
   -webkit-text-fill-color: rgb(224, 224, 224);
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.animate-fade-in {
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
 }
 
 

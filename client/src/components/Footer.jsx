@@ -16,7 +16,7 @@ const Footer = ({ language }) => {
           <div className="flex justify-center gap-4 mb-2">
             <a
               href="mailto:hola@pdrenders.com"
-              className="text-white text-xl hover:text-gray-400"
+              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
               aria-label="Email"
             >
               <FaEnvelope />
@@ -25,7 +25,7 @@ const Footer = ({ language }) => {
               href="https://www.instagram.com/pd.renders"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-xl hover:text-gray-400"
+              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
               aria-label="Instagram"
             >
               <FaInstagram />
@@ -34,7 +34,7 @@ const Footer = ({ language }) => {
               href="https://www.linkedin.com/company/pd-renders"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-xl hover:text-gray-400"
+              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
               aria-label="LinkedIn"
             >
               <FaLinkedin />

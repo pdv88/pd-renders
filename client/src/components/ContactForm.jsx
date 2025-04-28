@@ -39,7 +39,7 @@ const ContactForm = ({ language }) => {
       className="flex flex-col w-full max-w-[1000px] mx-auto p-8 min-h-screen justify-center"
       id="contact"
     >
-      <h2 className="text-3xl font-semibold mb-6 text-center">
+      <h2 className="md:text-7xl text-5xl font-semibold m-20 text-center">
         {language === "en" ? "Contact Us" : "Contacto"}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">

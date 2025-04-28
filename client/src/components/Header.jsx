@@ -3,9 +3,9 @@ import logo from "../assets/logo2.webp";
 
 const Header = ({ setLanguage, language }) => {
   return (
-    <header className="w-full py-4">
+    <header className="w-full py-4" id="header">
 
-      <div className="flex absolute top-2 right-2 justify-end">
+      <div className="flex justify-end px-2">
         <p
           className={`${
             language === "en"
@@ -30,21 +30,21 @@ const Header = ({ setLanguage, language }) => {
       </div>
 
       <div className="flex max-w-7xl mx-auto justify-evenly items-center">
-        <a
+        {/* <a
           href="#services"
           className="w-1/3 block text-md font-medium text-center hover:border-b-1 border-gray-400 rounded-lg" 
         >
           {language == "en" ? "Services" : "Servicios"}
-        </a>
+        </a> */}
         <div className="w-1/3 text-xl font-semibold tracking-wide justify-center flex items-center">
           <img className="w-[100px] md:w-[150px]" src={logo} alt="Logo PD Renders" />
         </div>
-        <a
+        {/* <a
           href="#contact"
           className="w-1/3 block text-md font-medium text-center hover:border-b-1 border-gray-400 rounded-lg"
         >
           {language == "en" ? "Contact Us" : "Contacto"}
-        </a>
+        </a> */}
       </div>
     </header>
   );

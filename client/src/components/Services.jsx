@@ -34,7 +34,7 @@ const Services = ({ language }) => {
 
   return (
     <section className="flex flex-col justify-center min-h-screen" id="services">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="md:text-7xl text-5xl font-bold text-center m-20">
         {language === "en" ? "Our Services" : "Nuestros Servicios"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-12">
