@@ -9,13 +9,13 @@ import img7 from '../assets/gallery/img7.webp';
 import img9 from '../assets/gallery/img9.webp';
 import img10 from '../assets/gallery/img10.webp';
 import img11 from '../assets/gallery/img11.webp';
+import img12 from '../assets/gallery/img12.webp';
 import img13 from '../assets/gallery/img13.webp';
-import img14 from '../assets/gallery/img14.webp';
 import img15 from '../assets/gallery/img15.webp';
 
 const Gallery = () => {
   
-    const images = [img1, img2, img4, img5, img6, img7, img9, img10, img11, img13, img14, img15]; // Add more images as needed
+    const images = [img1, img2, img4, img5, img6, img7, img9, img10, img11, img13, img12, img15]; // Add more images as needed
 
   
     return (
