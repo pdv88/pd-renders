@@ -3,48 +3,92 @@ import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
 import logo from "../assets/logo2.webp";
 
 const Footer = ({ language }) => {
+  const navLinks = [
+    { href: "#why", label: language === "en" ? "Why Us" : "Por Qué" },
+    { href: "#gallery", label: "Portfolio" },
+    { href: "#pricing", label: language === "en" ? "Pricing" : "Precios" },
+    { href: "#contact", label: language === "en" ? "Contact" : "Contacto" },
+  ];
+
   return (
-    <footer className="flex flex-col w-full text-white items-center justify-center text-center py-12">
-      <div className="flex max-md:flex-col justify-evenly w-full">
-        <div className="flex justify-center p-6">
-          <img className="md:w-[150px] w-[100px]" src={logo} alt="Logo PD Reander" onClick={() => window.location.href="#header"}/>
-        </div>
-        <div className="flex flex-col justify-center p-12">
-          <h2 className="text-2xl font-bold mb-4">
-            {language === "en" ? "Follow us" : "Síguenos"}
-          </h2>
-          <div className="flex justify-center gap-4 mb-2">
-            <a
-              href="mailto:hola@pdrenders.com"
-              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
-              aria-label="Email"
-            >
-              <FaEnvelope />
+    <footer className="border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Logo & tagline */}
+          <div className="flex flex-col items-center md:items-start">
+            <a href="#header">
+              <img className="w-[100px] mb-4" src={logo} alt="Logo PD Renders" />
             </a>
-            <a
-              href="https://www.instagram.com/pd.renders"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/pd-renders"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex text-white text-2xl w-14 h-14 items-center justify-center hover:text-gray-400"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
+            <p className="text-sm max-w-[240px] text-center md:text-left" style={{ color: "var(--text-muted)" }}>
+              {language === "en"
+                ? "Photometrically accurate architectural visualization for lighting designers."
+                : "Visualización arquitectónica fotométricamente precisa para diseñadores de iluminación."}
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-col items-center">
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--text-secondary)" }}>
+              {language === "en" ? "Navigation" : "Navegación"}
+            </h4>
+            <nav className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm transition-colors duration-200 hover:text-[var(--accent)]"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Social */}
+          <div className="flex flex-col items-center md:items-end">
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--text-secondary)" }}>
+              {language === "en" ? "Connect" : "Conecta"}
+            </h4>
+            <div className="flex gap-3">
+              <a
+                href="mailto:hola@pdrenders.com"
+                className="flex w-10 h-10 items-center justify-center rounded-lg transition-all duration-200 hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--accent)]"
+                style={{ color: "var(--text-muted)" }}
+                aria-label="Email"
+              >
+                <FaEnvelope size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/pd.renders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-10 h-10 items-center justify-center rounded-lg transition-all duration-200 hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--accent)]"
+                style={{ color: "var(--text-muted)" }}
+                aria-label="Instagram"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/pd-renders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-10 h-10 items-center justify-center rounded-lg transition-all duration-200 hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--accent)]"
+                style={{ color: "var(--text-muted)" }}
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={18} />
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Bottom divider & copyright */}
+        <div className="h-px w-full mb-6" style={{ background: "var(--border-subtle)" }} />
+        <p className="text-center text-xs" style={{ color: "var(--text-muted)" }}>
+          © {new Date().getFullYear()} PD Renders. All rights reserved.
+        </p>
       </div>
-      <p className="text-sm">
-        © {new Date().getFullYear()} PD Renders. All rights reserved.
-      </p>
     </footer>
   );
 };

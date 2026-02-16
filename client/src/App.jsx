@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero.jsx';
+import WhyPhotometric from './components/WhyPhotometric.jsx';
 import Gallery from './components/Gallery.jsx';
-/* import Services from './components/Services'; */
-/* import Testimonials from './components/Testimonials.jsx'; */
+import Pricing from './components/Pricing.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -42,18 +42,18 @@ function App() {
           <Hero language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[1] = el)} className="opacity-0 transition-opacity duration-700">
-          <Gallery />
+          <WhyPhotometric language={language} />
         </div>
-        {/* <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
-          <Services language={language} />
-        </div> */}
-        {/* <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
-          <Testimonials language={language} />
-        </div> */}
+        <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
+          <Gallery language={language} />
+        </div>
         <div ref={(el) => (sectionsRef.current[3] = el)} className="opacity-0 transition-opacity duration-700">
-          <ContactForm language={language} />
+          <Pricing language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[4] = el)} className="opacity-0 transition-opacity duration-700">
+          <ContactForm language={language} />
+        </div>
+        <div ref={(el) => (sectionsRef.current[5] = el)} className="opacity-0 transition-opacity duration-700">
           <Footer language={language} />
         </div>
       </main>

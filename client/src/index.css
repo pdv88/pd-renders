@@ -1,19 +1,33 @@
 @import "tailwindcss";
 
+/* ── Design tokens ─────────────────────────────────────── */
+:root {
+  --bg-primary: #0f0f0f;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(245, 158, 11, 0.35);
+  --accent: #f59e0b;
+  --accent-soft: #fbbf24;
+  --text-primary: #f5f5f5;
+  --text-secondary: rgba(245, 245, 245, 0.55);
+  --text-muted: rgba(245, 245, 245, 0.3);
+}
 
-
+/* ── Base ───────────────────────────────────────────────── */
 * {
   scroll-behavior: smooth;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  color: rgb(224, 224, 224);
-  background-color: #232323;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   margin: 0;
   padding: 0;
 }
+
 #root {
   width: 100%;
   min-height: 100dvh;
@@ -25,25 +39,143 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-.group:hover .absolute {
-  transition: background-position 0.2s;
-}
-input:-webkit-autofill {
-  background-color: none;
-  -webkit-box-shadow: 0 0 0px 1000px #232323 inset;
-  box-shadow: 0 0 0px 1000px #232323 inset;
-  -webkit-text-fill-color: rgb(224, 224, 224);
-}
-
+/* ── Utility: fade-in on scroll ─────────────────────────── */
 .opacity-0 {
   opacity: 0;
 }
 
 .animate-fade-in {
   opacity: 1;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
 }
 
+/* ── Hero gradient animation ────────────────────────────── */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(245, 158, 11, 0.12), transparent),
+              radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245, 158, 11, 0.06), transparent),
+              var(--bg-primary);
+}
+
+/* ── Sticky header ──────────────────────────────────────── */
+.header-blur {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(15, 15, 15, 0.75);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ── Glassmorphism card ─────────────────────────────────── */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-pro {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.08);
+}
+
+.glass-card-pro:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(245, 158, 11, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(245, 158, 11, 0.12);
+}
+
+/* ── Accent badge ───────────────────────────────────────── */
+.badge-accent {
+  background: linear-gradient(135deg, var(--accent), #d97706);
+  color: #0f0f0f;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Divider with glow ──────────────────────────────────── */
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+/* ── Button styles ──────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f0f0f;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* ── Autofill fix ───────────────────────────────────────── */
+input:-webkit-autofill {
+  background-color: none;
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-primary) inset;
+  box-shadow: 0 0 0px 1000px var(--bg-primary) inset;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+/* ── Gallery scroll animation (kept from original) ──────── */
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
@@ -53,18 +185,30 @@ input:-webkit-autofill {
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-@keyframes pause-scroll {
-  0% {
-    animation-play-state: paused;
-  }
+/* ── Feature icon container ─────────────────────────────── */
+.icon-container {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  flex-shrink: 0;
 }
 
+/* ── Section spacing ────────────────────────────────────── */
+.section-padding {
+  padding: 100px 24px;
+}
 
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 64px 16px;
+  }
+}
