@@ -177,6 +177,25 @@ const Pricing = ({ language }) => {
             </div>
           ))}
         </div>
+
+        {/* Free Trial Banner */}
+        <div className="glass-card mt-12 p-8 md:p-10 text-center max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold mb-2">
+                {language === "en" ? "Not sure yet?" : "¿Aún no estás seguro?"}
+              </h3>
+              <p style={{ color: "var(--text-secondary)" }}>
+                {language === "en"
+                  ? "Try us with a free render or a 1-week trial — no commitment, no credit card required. See the photometric difference for yourself."
+                  : "Pruébanos con un render gratuito o una prueba de 1 semana — sin compromiso, sin tarjeta de crédito. Comprueba la diferencia fotométrica por ti mismo."}
+              </p>
+            </div>
+            <a href="#contact" className="btn-primary whitespace-nowrap">
+              {language === "en" ? "Start Free Trial" : "Prueba Gratis"}
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
