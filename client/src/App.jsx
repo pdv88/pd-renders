@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero.jsx';
 import WhyPhotometric from './components/WhyPhotometric.jsx';
+import BeforeAfter from './components/BeforeAfter.jsx';
+import CostComparison from './components/CostComparison.jsx';
 import Gallery from './components/Gallery.jsx';
 import Pricing from './components/Pricing.jsx';
 import ContactForm from './components/ContactForm.jsx';
@@ -45,15 +47,21 @@ function App() {
           <WhyPhotometric language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[2] = el)} className="opacity-0 transition-opacity duration-700">
-          <Gallery language={language} />
+          <BeforeAfter language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[3] = el)} className="opacity-0 transition-opacity duration-700">
-          <Pricing language={language} />
+          <Gallery language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[4] = el)} className="opacity-0 transition-opacity duration-700">
-          <ContactForm language={language} />
+          <CostComparison language={language} />
         </div>
         <div ref={(el) => (sectionsRef.current[5] = el)} className="opacity-0 transition-opacity duration-700">
+          <Pricing language={language} />
+        </div>
+        <div ref={(el) => (sectionsRef.current[6] = el)} className="opacity-0 transition-opacity duration-700">
+          <ContactForm language={language} />
+        </div>
+        <div ref={(el) => (sectionsRef.current[7] = el)} className="opacity-0 transition-opacity duration-700">
           <Footer language={language} />
         </div>
       </main>

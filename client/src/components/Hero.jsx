@@ -22,7 +22,7 @@ const Hero = ({ language }) => {
             : "Photometric Driven Renders"}
         </p>
 
-        {/* Main headline */}
+        {/* Main headline — fidelity first */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] mb-6">
           {language === "en" ? (
             <>
@@ -37,11 +37,18 @@ const Hero = ({ language }) => {
           )}
         </h1>
 
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10" style={{ color: "var(--text-secondary)" }}>
+        {/* Subheadline — fidelity lead, cost hook */}
+        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-4" style={{ color: "var(--text-secondary)" }}>
           {language === "en"
-            ? "PD stands for Photometric Driven — because we specialize in accurate visualization for lighting designers and firms. Every lux, beam angle, and color temperature — rendered as it will be built."
-            : "PD significa Photometric Driven — porque nos especializamos en visualización precisa para diseñadores de iluminación. Cada lux, ángulo de haz y temperatura de color — renderizado tal como será construido."}
+            ? "Every lux, beam angle, and color temperature — rendered exactly as specified. Built for lighting designers who need renders they can trust."
+            : "Cada lux, ángulo de haz y temperatura de color — renderizado exactamente como está especificado. Creado para diseñadores de iluminación que necesitan renders confiables."}
+        </p>
+
+        {/* Cost hook line */}
+        <p className="text-base md:text-lg max-w-xl mx-auto mb-10" style={{ color: "var(--text-muted)" }}>
+          {language === "en"
+            ? "Starting at $1,800 USD/mo — less than a junior archviz hire, with zero overhead."
+            : "Desde $1,800 USD/mes — menos que contratar un junior de archviz, sin costos fijos."}
         </p>
 
         {/* CTAs */}

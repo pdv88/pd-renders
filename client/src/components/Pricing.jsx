@@ -6,10 +6,19 @@ const Pricing = ({ language }) => {
       name: "Essential",
       price: "1,800",
       highlighted: false,
+      savingsTag:
+        language === "en"
+          ? "~75% less than a junior hire"
+          : "~75% menos que contratar un junior",
       features: [
         {
           en: "Photometric accurate still images",
           es: "Imágenes estáticas fotométricamente precisas",
+          included: true,
+        },
+        {
+          en: "Unlimited iterations on active space",
+          es: "Iteraciones ilimitadas en el espacio activo",
           included: true,
         },
         {
@@ -28,8 +37,13 @@ const Pricing = ({ language }) => {
           included: true,
         },
         {
-          en: "Virtual tours",
-          es: "Recorridos virtuales",
+          en: "No contracts or HR overhead",
+          es: "Sin contratos ni carga administrativa",
+          included: true,
+        },
+        {
+          en: "Interactive virtual tours",
+          es: "Recorridos virtuales interactivos",
           included: false,
         },
       ],
@@ -38,6 +52,10 @@ const Pricing = ({ language }) => {
       name: "Pro",
       price: "3,000",
       highlighted: true,
+      savingsTag:
+        language === "en"
+          ? "~60% less than a junior hire"
+          : "~60% menos que contratar un junior",
       features: [
         {
           en: "Photometric accurate still images",
@@ -45,8 +63,13 @@ const Pricing = ({ language }) => {
           included: true,
         },
         {
-          en: "Interactive virtual tours",
-          es: "Recorridos virtuales interactivos",
+          en: "Interactive virtual tours (Unreal Engine)",
+          es: "Recorridos virtuales interactivos (Unreal Engine)",
+          included: true,
+        },
+        {
+          en: "Unlimited iterations on active spaces",
+          es: "Iteraciones ilimitadas en los espacios activos",
           included: true,
         },
         {
@@ -64,6 +87,11 @@ const Pricing = ({ language }) => {
           es: "Integración de perfiles IES",
           included: true,
         },
+        {
+          en: "No contracts or HR overhead",
+          es: "Sin contratos ni carga administrativa",
+          included: true,
+        },
       ],
     },
   ];
@@ -78,13 +106,13 @@ const Pricing = ({ language }) => {
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4">
             {language === "en"
-              ? "Simple, predictable pricing."
-              : "Precios simples y predecibles."}
+              ? "Predictable pricing. No surprises."
+              : "Precios predecibles. Sin sorpresas."}
           </h2>
-          <p className="max-w-xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             {language === "en"
-              ? "Monthly subscriptions designed for lighting design firms. Cancel anytime."
-              : "Suscripciones mensuales diseñadas para firmas de diseño de iluminación. Cancela cuando quieras."}
+              ? "Both plans cost less than a junior archviz artist's monthly salary — with better photometric accuracy and zero overhead."
+              : "Ambos planes cuestan menos que el salario mensual de un artista junior de archviz — con mejor precisión fotométrica y cero overhead."}
           </p>
         </div>
 
@@ -118,8 +146,16 @@ const Pricing = ({ language }) => {
                   USD
                 </span>
               </div>
-              <p className="mb-8 text-sm" style={{ color: "var(--text-muted)" }}>
+              <p className="mb-2 text-sm" style={{ color: "var(--text-muted)" }}>
                 {language === "en" ? "per month" : "por mes"}
+              </p>
+
+              {/* Savings tag */}
+              <p
+                className="text-xs font-semibold mb-8 inline-block"
+                style={{ color: "var(--accent)" }}
+              >
+                {tier.savingsTag}
               </p>
 
               {/* Divider */}
